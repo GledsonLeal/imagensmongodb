@@ -1,0 +1,15 @@
+<!-- images.ejs -->
+<!doctype html>
+<html>
+  <head>
+    <title>Imagens salvas</title>
+  </head>
+  <body>
+    <h1>Imagens salvas</h1>
+    <ul>
+      <% images.forEach((image) => { %>
+        <li><a href="<%= image.path %>"><%= image.name %></a></li>
+      <% }) %>
+    </ul>
+  </body>
+</html>

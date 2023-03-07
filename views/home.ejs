@@ -1,0 +1,20 @@
+<!-- home.ejs -->
+<!doctype html>
+<html>
+  <head>
+    <title>Upload de imagens</title>
+  </head>
+  <body>
+    <h1>Upload de imagens</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="image">
+      <button type="submit">Enviar</button>
+    </form>
+    <h2>Imagens salvas:</h2>
+    <ul>
+      <% images.forEach((image) => { %>
+        <li><%= image.name %></li>
+      <% }) %>
+    </ul>
+  </body>
+</html>
