@@ -33,7 +33,10 @@ const Image = mongoose.model('Image', {
 
 // Rota principal, exibe o formulário de upload
 app.get('/', (req, res) => {
-  res.render('home');
+    Image.find()
+    .then((images) => res.render('home', { images }))
+    .catch((err) => console.log(err));
+  //res.render('home');
 });
 
 // Rota de upload, salva a imagem no servidor e no banco de dados
